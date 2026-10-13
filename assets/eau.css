@@ -1,0 +1,112 @@
+/* Groupe ZH Sim — EAU (station d'épuration) : compléments propres à demo-eau.html.
+   Le design system commun est dans zh-sim.css (jetons ISA-101). */
+
+/* ---------- Mise en page desktop : tout tient dans l'écran ---------- */
+@media (min-width: 901px) {
+  .eau-main { height: calc(100vh - 78px); }
+  .eau-left { display: flex; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
+  .eau-left .zh-synoptic { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .eau-left .zh-synoptic .zh-svg { max-height: 100%; height: 100%; width: 100%; }
+  .eau-main .zh-panel { max-height: none; height: 100%; }
+  .eau-left .zh-trend-canvas { height: 118px; }
+  .eau-left .zh-alarm-list { max-height: 96px; }
+}
+@media (min-width: 1200px) {
+  .eau-bottom { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-top: 1px solid var(--zh-border); }
+  .eau-bottom .zh-alarmbar { border-top: 0; border-right: 1px solid var(--zh-border); }
+  .eau-bottom .zh-trends { border-top: 0; }
+  .eau-bottom .zh-alarm-list { max-height: 168px; }
+  .eau-bottom .zh-trend-canvas { height: 122px; }
+}
+
+/* ---------- Synoptique ---------- */
+.zh-svg .eau-surf { stroke: #8a9096; stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
+.zh-svg .eau-bub { fill: #eef0f1; fill-opacity: .55; stroke: #5f666d; stroke-width: .9; stroke-opacity: .7; }
+.zh-svg .eau-diff { fill: var(--zh-line); }
+.zh-svg .eau-car { fill: #4a535b; }
+.zh-svg .eau-bltop { fill: none; stroke: #4a535b; stroke-width: 2; }
+#g_clar.zh-alm-2 .eau-bltop { stroke: var(--zh-alarm-med); stroke-width: 3; }
+#g_clar.zh-alm-1 .eau-bltop { stroke: var(--zh-alarm-hi); stroke-width: 3.5; }
+#g_clar.zh-unack .eau-bltop { animation: zh-blink 1s steps(2, start) infinite; }
+.zh-svg .eau-blmark { fill: var(--zh-text); }
+.zh-svg .eau-valve { fill: #fff; stroke: var(--zh-line); stroke-width: 1.5; }
+.zh-svg .eau-valve.eau-open { fill: var(--zh-line); }
+.zh-svg .eau-rain line { stroke: var(--zh-info); stroke-width: 1.3; }
+.zh-svg .eau-raintxt { font: 600 12px var(--zh-font); fill: var(--zh-info) !important; }
+.zh-svg .zh-flowover.eau-bad { stroke: var(--zh-alarm-hi); stroke-width: 2; }
+.zh-svg .eau-badtxt { fill: var(--zh-alarm-hi) !important; font-weight: 700; }
+
+/* équipements tournants : arrêt = creux, marche = plein (ISA-101) */
+.zh-svg .eau-blower .eau-blc, .zh-svg .eau-pump .eau-pc { fill: #f4f5f5; }
+.zh-svg .eau-blower .eau-fan path, .zh-svg .eau-blower .eau-fan circle { fill: var(--zh-equip); }
+.zh-svg .eau-blower.eau-on .eau-blc { fill: var(--zh-line); stroke: var(--zh-text); }
+.zh-svg .eau-blower.eau-on .eau-fan path, .zh-svg .eau-blower.eau-on .eau-fan circle { fill: #eef0f1; }
+.zh-svg .eau-blower.eau-fault .eau-blc { stroke: var(--zh-alarm-hi); stroke-width: 3; }
+.zh-svg .eau-blower.eau-fault .eau-st { fill: var(--zh-alarm-hi); font-weight: 700; }
+.zh-svg .eau-blower.zh-alm-1 .eau-blc { stroke: var(--zh-alarm-hi); stroke-width: 3.5; }
+.zh-svg .eau-blower.zh-unack .eau-blc { animation: eau-strobe 1s steps(2, start) infinite; }
+@keyframes eau-strobe { 50% { stroke: #f4f5f5; } }
+.zh-svg .eau-starting .eau-blc, .zh-svg .eau-starting .eau-pc { stroke: var(--zh-info); stroke-dasharray: 4 3; }
+.zh-svg .eau-starting .eau-st { fill: var(--zh-info); }
+.zh-svg .eau-pump .eau-pt { fill: var(--zh-equip); }
+.zh-svg .eau-pump.eau-on .eau-pc { fill: var(--zh-line); }
+.zh-svg .eau-pump.eau-on .eau-pt { fill: #eef0f1; }
+
+/* ---------- Faceplates ---------- */
+.eau-sm { min-height: 28px; padding: 3px 9px; font-size: 12px; }
+.eau-step { display: inline-flex; align-items: center; gap: 6px; }
+.eau-step .eau-sm { width: 30px; padding: 3px 0; font-size: 15px; line-height: 1; }
+.eau-eq { flex-wrap: nowrap; }
+.eau-eq > span:first-child { white-space: nowrap; }
+.eau-eq small { color: var(--zh-text-2); font-size: 10.5px; }
+.eau-eq .zh-v { margin-left: auto; font-size: 11.5px; }
+.eau-pvbar { position: relative; overflow: visible; margin: 3px 0 4px; }
+.eau-pvbar b { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--zh-sp); margin-left: -1px; }
+.zh-fp.eau-flash { animation: eau-flash 1.2s ease; }
+@keyframes eau-flash { 0%, 40% { box-shadow: 0 0 0 3px var(--zh-accent); } 100% { box-shadow: none; } }
+.eau-legal { padding: 0 2px; }
+.zh-fp .zh-btn--block { white-space: normal; }
+
+/* ---------- En-tête ---------- */
+.eau-elapsed { font-size: 11px; opacity: .6; margin-left: 4px; }
+
+/* ---------- Onglets de tendances ---------- */
+.eau-tabs { display: flex; gap: 4px; margin-bottom: 6px; flex-wrap: wrap; }
+.eau-tabs button {
+  border: 1px solid var(--zh-border); background: #fff; color: var(--zh-text-2); border-radius: var(--zh-radius);
+  padding: 4px 10px; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.eau-tabs button[aria-selected="true"] { background: var(--zh-line); color: #fff; border-color: var(--zh-line); }
+.eau-tpane[hidden] { display: none; }
+
+/* ---------- KPI mobiles ---------- */
+.eau-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; padding: 6px 8px 8px; background: var(--zh-bg-proc); }
+.eau-kpi { background: #f4f5f5; border: 1px solid var(--zh-border); border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; min-width: 0; position: relative; }
+.eau-kpi span { font-size: 10.5px; color: var(--zh-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.eau-kpi b { font: 700 16px var(--zh-mono); font-variant-numeric: tabular-nums; }
+.eau-kpi i { font-style: normal; font-size: 10px; color: var(--zh-text-2); }
+.eau-kpi.zh-alm-1 { border: 2px solid var(--zh-alarm-hi); }
+.eau-kpi.zh-alm-2 { border: 2px solid var(--zh-alarm-med); }
+.eau-kpi.zh-alm-3 { border: 2px solid var(--zh-info); }
+.eau-kpi.zh-unack::after { content: ""; position: absolute; top: 4px; right: 4px; width: 8px; height: 8px; background: currentColor; color: var(--zh-alarm-hi); animation: zh-blink 1s steps(2, start) infinite; }
+.eau-kpi.zh-alm-2.zh-unack::after { color: var(--zh-alarm-med); }
+.eau-kpi.zh-alm-3.zh-unack::after { color: var(--zh-info); }
+
+/* ---------- Rejeu : commandes verrouillées ---------- */
+.eau-replay .zh-panel { opacity: .75; }
+.eau-replay #endBtn, .eau-replay #pause { pointer-events: none; opacity: .5; }
+
+@media (min-width: 901px) { .eau-kpis { display: none; } }
+@media (max-width: 900px) {
+  .zh-synoptic { padding: 4px; }
+}
+@media (max-width: 640px) {
+  .eau-kpi b { font-size: 15px; }
+  .eau-kpis { gap: 4px; padding: 6px 6px 8px; }
+  .eau-kpi { padding: 4px 5px; }
+  .eau-kpi span { font-size: 10px; letter-spacing: -.01em; }
+  .eau-elapsed { display: none; }
+  .eau-tabs button { padding: 4px 7px; font-size: 11.5px; }
+}
+.eau-left { min-width: 0; }
+.eau-left .zh-svg { max-width: 100%; }

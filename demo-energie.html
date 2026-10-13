@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaudière vapeur, niveau du ballon · Démo Groupe ZH Sim</title>
+<meta name="description" content="Simulateur web de chaudière vapeur industrielle : niveau du ballon, gonflement et contraction, régulation 1 et 3 éléments. Démo pédagogique Groupe ZH Sim.">
+<meta name="theme-color" content="#0f2233">
+<link rel="canonical" href="https://zineddinehamami-byte.github.io/groupe-zh/demo-energie.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Groupe ZH">
+<meta property="og:url" content="https://zineddinehamami-byte.github.io/groupe-zh/demo-energie.html">
+<meta property="og:title" content="Chaudière vapeur, niveau du ballon · démo jouable">
+<meta property="og:description" content="Gonflement, pompe alimentaire, panne mystère : tenez le niveau du ballon sans déclencher le brûleur. Démo pédagogique Groupe ZH.">
+<meta property="og:image" content="https://zineddinehamami-byte.github.io/groupe-zh/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/zh-sim.css">
+<link rel="stylesheet" href="assets/energie.css">
+</head>
+<body class="zh-body zh-fit en-body">
+<div class="zh-demo-banner" role="note"><b>Démo pédagogique</b> — ne remplace pas les consignes de votre site</div>
+
+<header class="zh-header">
+  <a class="zh-brand" href="index.html" data-zh-keep-src title="Accueil Groupe ZH"><span class="zh-brand-mark">ZH</span>Groupe ZH Sim <small>· Énergie</small></a>
+  <div class="zh-scn" id="en-scn"><span class="zh-scn-unit">Chaudière vapeur 20 t/h · </span><b>briefing</b></div>
+  <div class="zh-clock" id="en-clock"></div>
+  <div id="en-speed"></div>
+  <button type="button" class="zh-hbtn" id="en-pause">Ⅱ Pause</button>
+  <span class="zh-header-spacer"></span>
+  <a class="zh-hbtn" href="simulateurs.html" data-zh-keep-src title="Revenir à la liste des simulateurs">← Simulateurs</a>
+  <button type="button" class="zh-hbtn zh-hide-sm" data-zh-trainer title="Mode formateur (touche F)">Mode formateur</button>
+  <button type="button" class="zh-hbtn" id="en-end" title="Terminer la partie et voir le débriefing">Terminer</button>
+</header>
+
+<div class="en-kpis" id="en-kpis" aria-label="Valeurs principales"></div>
+
+<main class="zh-main">
+  <section class="zh-synoptic" id="en-syn" aria-label="Synoptique de la chaudière"></section>
+  <aside class="zh-panel" id="zh-panel" aria-label="Commandes"></aside>
+</main>
+
+<div class="zh-bottom">
+<section class="zh-alarmbar" id="en-alarms" aria-label="Alarmes"></section>
+
+<details class="zh-trends" id="en-trends" open>
+  <summary>Tendances (10 min de procédé)</summary>
+  <div class="zh-trend-wrap en-trend-grid">
+    <div><canvas class="zh-trend-canvas" id="en-tr1"></canvas><div id="en-lg1"></div></div>
+    <div><canvas class="zh-trend-canvas" id="en-tr2"></canvas><div id="en-lg2"></div></div>
+  </div>
+</details>
+</div>
+
+<button type="button" class="zh-drawer-btn" id="en-drawer-btn" aria-controls="zh-panel" aria-expanded="false"><span class="zh-dot"></span><span data-r="lbl">Commandes</span></button>
+
+<script src="assets/zh-sim-core.js"></script>
+<script src="assets/energie.js"></script>
+</body>
+</html>

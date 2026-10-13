@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulateurs de procédé jouables en ligne (chimie, eau, énergie) · Groupe ZH</title>
+<meta name="description" content="Trois simulateurs de procédé à jouer dans le navigateur en 3 à 5 minutes : réacteur exothermique, station d’épuration, chaudière vapeur. Briefing, incident, débriefing noté sur 100.">
+<meta name="author" content="Groupe ZH">
+<meta name="theme-color" content="#0f2233">
+<link rel="canonical" href="https://zineddinehamami-byte.github.io/groupe-zh/simulateurs.html">
+<meta property="og:url" content="https://zineddinehamami-byte.github.io/groupe-zh/simulateurs.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Groupe ZH">
+<meta property="og:title" content="Trois simulateurs de procédé à jouer en 3 minutes">
+<meta property="og:description" content="Réacteur exothermique, station d’épuration, chaudière vapeur : gérez l’incident, puis lisez votre débriefing noté sur 100.">
+<meta property="og:image" content="https://zineddinehamami-byte.github.io/groupe-zh/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Groupe ZH : synoptique de réacteur et courbe de température qui revient à la consigne.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Simulateurs de procédé Groupe ZH",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Réacteur semi-batch exothermique (chimie)", "url": "https://zineddinehamami-byte.github.io/groupe-zh/demo.html" },
+    { "@type": "ListItem", "position": 2, "name": "Station d'épuration à boues activées (eau)", "url": "https://zineddinehamami-byte.github.io/groupe-zh/demo-eau.html" },
+    { "@type": "ListItem", "position": 3, "name": "Chaudière vapeur : niveau du ballon (énergie)", "url": "https://zineddinehamami-byte.github.io/groupe-zh/demo-energie.html" }
+  ],
+  "provider": { "@type": "Organization", "name": "Groupe ZH", "email": "z.hamami.formations@gmail.com" }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" data-keep-src aria-label="Groupe ZH, accueil">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#00a3a1"/><path d="M6 21.5h4.2l2.6-9 3.6 13 3-8.5h6.6" fill="none" stroke="#0f2233" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Groupe ZH <small>Procédés &amp; sécurité</small>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="simulateurs.html" data-keep-src aria-current="page">Simulateurs</a>
+      <a href="index.html#offres" data-keep-src>Offres</a>
+      <a href="index.html#deroule" data-keep-src>Déroulé</a>
+      <a href="index.html#faq" data-keep-src>FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="mailto:z.hamami.formations@gmail.com?subject=Diagnostic%20offert" data-mailto>Diagnostic offert</a>
+  </div>
+</header>
+
+<p class="notice">Démo pédagogique : les simulateurs ne remplacent pas les consignes de votre site.</p>
+
+<main id="contenu">
+<section class="page-hero" aria-labelledby="titre">
+  <div class="wrap">
+    <p class="eyebrow">Simulateurs</p>
+    <h1 id="titre">Trois procédés, trois incidents. À vous de garder la main.</h1>
+    <p class="lead">Chaque démo se joue en 3 à 5 minutes dans le navigateur, sans compte ni installation. C’est l’extrait d’une journée de session : la même mécanique, le même débriefing.</p>
+    <ol class="how">
+      <li><b>1 · Briefing</b><span>Votre rôle, l’objectif, trois scénarios de difficulté croissante.</span></li>
+      <li><b>2 · Incident</b><span>Temps accéléré ×10, incident injecté à un instant imprévisible.</span></li>
+      <li><b>3 · Débriefing</b><span>Score sur 100 : sécurité 50 %, production 30 %, réactivité 20 %.</span></li>
+      <li><b>4 · Mode formateur</b><span>Touche F : injecter une panne, geler, annoter, rejouer.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-label="Les trois simulateurs">
+  <div class="wrap">
+
+    <article class="sim" aria-labelledby="sim-chimie">
+      <div class="visual">
+        <svg viewBox="0 0 320 150" aria-hidden="true" font-family="Inter, system-ui, sans-serif">
+          <rect width="320" height="150" fill="#d9dbdc"/>
+          <path d="M58 46V112Q58 128 92 128Q126 128 126 112V46" fill="none" stroke="#5f666d" stroke-width="2"/>
+          <path d="M64 40Q64 30 92 30Q120 30 120 40V108Q120 122 92 122Q64 122 64 108Z" fill="#c4c8cb" stroke="#1d2329" stroke-width="1.6"/>
+          <path d="M65 68H119V108Q119 121 92 121Q65 121 65 108Z" fill="#aeb3b7"/>
+          <line x1="92" y1="16" x2="92" y2="104" stroke="#1d2329" stroke-width="1.6"/>
+          <g class="impeller"><rect x="78" y="100" width="28" height="4" rx="1" fill="#1d2329"/></g>
+          <path d="M126 112H160" stroke="#5f666d" stroke-width="2.4"/><path class="flow" d="M126 112H160" stroke="#1d2329" stroke-width="1.2" opacity=".55"/>
+          <rect x="172" y="22" width="130" height="106" rx="4" fill="#e6e7e8" stroke="#b6babd"/>
+          <line x1="180" y1="56" x2="294" y2="56" stroke="#8a9096" stroke-dasharray="4 3"/>
+          <line x1="180" y1="86" x2="294" y2="86" stroke="#2f6fdf" stroke-width="1.4"/>
+          <polyline points="180,86 200,86 214,80 226,64 236,52 246,50 256,62 266,78 278,86 294,86" fill="none" stroke="#1d2329" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="241" cy="50" r="4" fill="#d0021b"/>
+          <text x="180" y="40" font-size="10" font-weight="700" fill="#1d2329">TI-101</text>
+        </svg>
+      </div>
+      <div class="content">
+        <span class="tag">Chimie</span>
+        <h2 id="sim-chimie">Réacteur semi-batch exothermique</h2>
+        <p class="pitch">Vous conduisez la coulée d’un réactif dans un réacteur refroidi par double enveloppe. La réaction dégage de la chaleur : si le refroidissement ne suit plus, la température s’emballe.</p>
+        <h3>Scénarios</h3>
+        <ol class="scenarios">
+          <li><span><b>Perte partielle de l’eau de refroidissement.</b> La température monte : réagir avant l’alarme très haute.</span></li>
+          <li><span><b>Agitateur qui décroche.</b> Le réactif s’accumule sans réagir : ne pas relancer à l’aveugle.</span></li>
+          <li><span><b>Dérive d’une sonde de température.</b> Deux mesures divergent : laquelle croire ?</span></li>
+          <li><span><b>Quart mystère.</b> Une panne tirée au sort, à un instant inconnu.</span></li>
+        </ol>
+        <h3>Compétences travaillées</h3>
+        <ul class="skills"><li>Lire une tendance</li><li>Couper une alimentation</li><li>Accumulation de réactif</li><li>Valider une mesure</li><li>Bilan thermique</li></ul>
+        <div class="foot">
+          <a class="btn btn-dark" href="demo.html" data-keep-src>Lancer la démo chimie</a>
+          <span class="meta"><span>3 à 5 min</span><span>Ordinateur ou mobile</span></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="sim" aria-labelledby="sim-eau">
+      <div class="visual">
+        <svg viewBox="0 0 320 150" aria-hidden="true" font-family="Inter, system-ui, sans-serif">
+          <rect width="320" height="150" fill="#d9dbdc"/>
+          <path d="M14 70H44" stroke="#5f666d" stroke-width="2.4"/><path class="flow" d="M14 70H44" stroke="#1d2329" stroke-width="1.2" opacity=".55"/>
+          <rect x="44" y="48" width="92" height="62" fill="#c4c8cb" stroke="#1d2329" stroke-width="1.6"/>
+          <rect x="45" y="60" width="90" height="49" fill="#aeb3b7"/>
+          <g fill="#8a9096"><circle cx="62" cy="96" r="2.4"/><circle cx="74" cy="88" r="2"/><circle cx="88" cy="98" r="2.4"/><circle cx="102" cy="86" r="2"/><circle cx="116" cy="95" r="2.4"/></g>
+          <path d="M136 70H166" stroke="#5f666d" stroke-width="2.4"/><path class="flow" d="M136 70H166" stroke="#1d2329" stroke-width="1.2" opacity=".55"/>
+          <path d="M166 50H262L238 112H190Z" fill="#c4c8cb" stroke="#1d2329" stroke-width="1.6"/>
+          <path d="M262 62H306" stroke="#5f666d" stroke-width="2.4"/><path class="flow" d="M262 62H306" stroke="#1d2329" stroke-width="1.2" opacity=".55"/>
+          <circle cx="214" cy="26" r="11" fill="#d9dbdc" stroke="#1d2329" stroke-width="1.4"/>
+          <text x="214" y="29.5" font-size="9" font-weight="700" fill="#1d2329" text-anchor="middle">P</text>
+          <line x1="214" y1="37" x2="214" y2="50" stroke="#1d2329" stroke-width="1.4"/>
+          <rect x="232" y="120" width="76" height="22" rx="3" fill="#f5a623"/>
+          <text x="270" y="135" font-size="10.5" font-weight="700" fill="#1d2329" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">0,6 mg/L</text>
+          <text x="44" y="40" font-size="10" font-weight="700" fill="#1d2329">AÉRATION</text>
+          <text x="20" y="135" font-size="10" fill="#4a5259">O₂ dissous</text>
+        </svg>
+      </div>
+      <div class="content">
+        <span class="tag">Eau</span>
+        <h2 id="sim-eau">Station d’épuration à boues activées</h2>
+        <p class="pitch">Vous conduisez une station de 30 000 équivalents-habitants. Le débit varie, l’aération faiblit : il faut tenir l’oxygène, les boues et la qualité du rejet.</p>
+        <h3>Scénarios</h3>
+        <ol class="scenarios">
+          <li><span><b>Orage : débit ×3.</b> Le débit d’entrée triple pendant plusieurs heures : gardez vos boues dans le clarificateur.</span></li>
+          <li><span><b>Panne d’un surpresseur.</b> L’oxygène chute et la nitrification se dégrade : rétablir l’aération.</span></li>
+          <li><span><b>Mystère.</b> Une panne tirée au sort, sans alarme évidente : à vous de mener l’enquête.</span></li>
+        </ol>
+        <h3>Compétences travaillées</h3>
+        <ul class="skills"><li>Piloter l’aération</li><li>Gérer un débit d’orage</li><li>Lire le voile de boues</li><li>Croiser les mesures</li><li>Diagnostiquer une panne</li></ul>
+        <div class="foot">
+          <a class="btn btn-dark" href="demo-eau.html" data-keep-src>Lancer la démo eau</a>
+          <span class="meta"><span>3 à 5 min</span><span>Ordinateur ou mobile</span></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="sim" aria-labelledby="sim-energie">
+      <div class="visual">
+        <svg viewBox="0 0 320 150" aria-hidden="true" font-family="Inter, system-ui, sans-serif">
+          <rect width="320" height="150" fill="#d9dbdc"/>
+          <rect x="70" y="20" width="140" height="44" rx="22" fill="#c4c8cb" stroke="#1d2329" stroke-width="1.6"/>
+          <path d="M71 44H209V48Q209 63 188 63H92Q71 63 71 48Z" fill="#aeb3b7"/>
+          <line x1="72" y1="44" x2="208" y2="44" stroke="#1d2329" stroke-width="1.2"/>
+          <rect x="84" y="76" width="112" height="60" fill="#c4c8cb" stroke="#1d2329" stroke-width="1.6"/>
+          <line x1="104" y1="64" x2="104" y2="76" stroke="#1d2329" stroke-width="1.6"/><line x1="176" y1="64" x2="176" y2="76" stroke="#1d2329" stroke-width="1.6"/>
+          <path d="M128 128Q140 106 140 96Q146 110 152 128Z" fill="#8a9096"/>
+          <path d="M210 32H306" stroke="#5f666d" stroke-width="2.4"/><path class="flow" d="M210 32H306" stroke="#1d2329" stroke-width="1.2" opacity=".55"/>
+          <path d="M14 52H70" stroke="#5f666d" stroke-width="2.4"/><path class="flow" d="M14 52H70" stroke="#1d2329" stroke-width="1.2" opacity=".55"/>
+          <rect x="228" y="62" width="80" height="22" rx="3" fill="#f2f3f3" stroke="#8a9096"/>
+          <text x="234" y="77" font-size="9.5" fill="#4a5259">LIC</text>
+          <text x="302" y="77" font-size="11" font-weight="700" fill="#1d2329" text-anchor="end" font-family="ui-monospace, Menlo, monospace">+12 mm</text>
+          <text x="220" y="24" font-size="10" fill="#4a5259">VAPEUR</text>
+          <text x="16" y="44" font-size="10" fill="#4a5259">EAU ALIM.</text>
+        </svg>
+      </div>
+      <div class="content">
+        <span class="tag">Énergie</span>
+        <h2 id="sim-energie">Chaudière vapeur : niveau du ballon</h2>
+        <p class="pitch">Vous tenez le niveau du ballon pendant que l’usine appelle de la vapeur. Un appel brutal fait d’abord gonfler le niveau : le réflexe intuitif est le mauvais.</p>
+        <h3>Scénarios</h3>
+        <ol class="scenarios">
+          <li><span><b>Appel de vapeur brutal.</b> La demande bondit de 40 % : le niveau gonfle d’abord, gardez le bon réflexe.</span></li>
+          <li><span><b>Pompe alimentaire qui déclenche.</b> Démarrez le secours avant le niveau très bas.</span></li>
+          <li><span><b>Mystère.</b> Une panne cachée tirée au sort : une mesure ou une vanne vous ment.</span></li>
+        </ol>
+        <h3>Compétences travaillées</h3>
+        <ul class="skills"><li>Régulation de niveau</li><li>Effet de gonflement</li><li>Mode AUTO / MAN</li><li>Pompe de secours</li><li>Détecter une mesure figée</li></ul>
+        <div class="foot">
+          <a class="btn btn-dark" href="demo-energie.html" data-keep-src>Lancer la démo énergie</a>
+          <span class="meta"><span>3 à 5 min</span><span>Ordinateur ou mobile</span></span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="cta" aria-labelledby="t-cta">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Et sur votre procédé ?</p>
+      <h2 id="t-cta">Les mêmes simulateurs, calqués sur votre unité, pour une journée sur site.</h2>
+      <p>Session intra de 1 jour pour 3 à 8 personnes, à partir de 1 500 € HT. Le diagnostic de 30 minutes est offert.</p>
+    </div>
+    <div class="box">
+      <ul>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l2.8 2.8 6.2-6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Scénarios repris de vos seuils et de vos consignes</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l2.8 2.8 6.2-6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Débriefing chiffré et plan d’action</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l2.8 2.8 6.2-6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Île-de-France et régions limitrophes</li>
+      </ul>
+      <a class="btn btn-primary" href="mailto:z.hamami.formations@gmail.com?subject=Diagnostic%20offert" data-mailto>Demander mon diagnostic offert</a>
+      <p class="mail"><a href="index.html#offres" data-keep-src>Voir toutes les offres et tarifs</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html" data-keep-src>
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#00a3a1"/><path d="M6 21.5h4.2l2.6-9 3.6 13 3-8.5h6.6" fill="none" stroke="#0f2233" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Groupe ZH
+        </a>
+        <p>Formation et conseil en conduite de procédés et en sécurité industrielle. Chimie, eau, énergie.</p>
+      </div>
+      <div>
+        <h2>Démos</h2>
+        <ul>
+          <li><a href="demo.html" data-keep-src>Chimie : réacteur exothermique</a></li>
+          <li><a href="demo-eau.html" data-keep-src>Eau : station d’épuration</a></li>
+          <li><a href="demo-energie.html" data-keep-src>Énergie : chaudière vapeur</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:z.hamami.formations@gmail.com?subject=Diagnostic%20offert" data-mailto>z.hamami.formations@gmail.com</a></li>
+          <li>Île-de-France et régions limitrophes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p><a href="mentions-legales.html">Mentions légales</a> · Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure d’audience.</p>
+      <p>Les simulateurs sont des démonstrations pédagogiques : ils ne remplacent jamais les consignes, modes opératoires et procédures de votre site.</p>
+      <p>© 2026 Groupe ZH</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

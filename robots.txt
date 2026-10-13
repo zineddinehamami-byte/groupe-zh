@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /groupe-zh/captures/
+Disallow: /groupe-zh/CAHIER_DES_CHARGES.md
+
+Sitemap: https://zineddinehamami-byte.github.io/groupe-zh/sitemap.xml

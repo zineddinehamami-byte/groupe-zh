@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Station d’épuration à boues activées · Démo Groupe ZH Sim</title>
+<meta name="description" content="Simulateur web de station d’épuration à boues activées : aération régulée, recirculation, voile de boues, orage, pannes. Démo pédagogique Groupe ZH Sim.">
+<meta name="theme-color" content="#0f2233">
+<link rel="canonical" href="https://zineddinehamami-byte.github.io/groupe-zh/demo-eau.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Groupe ZH">
+<meta property="og:url" content="https://zineddinehamami-byte.github.io/groupe-zh/demo-eau.html">
+<meta property="og:title" content="Station d’épuration · démo jouable">
+<meta property="og:description" content="Orage, panne de surpresseur, panne mystère : tenez l’oxygène, les boues et la qualité du rejet. Démo pédagogique Groupe ZH.">
+<meta property="og:image" content="https://zineddinehamami-byte.github.io/groupe-zh/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/zh-sim.css">
+<link rel="stylesheet" href="assets/eau.css">
+</head>
+<body class="zh-body">
+<div class="zh-demo-banner" role="note"><b>Démo pédagogique</b> — ne remplace pas les consignes de votre site</div>
+<header class="zh-header">
+  <a class="zh-brand" href="index.html" data-zh-keep-src title="Accueil Groupe ZH"><span class="zh-brand-mark">ZH</span>Groupe ZH Sim <small>· Eau</small></a>
+  <div class="zh-scn"><span class="zh-scn-unit">Station d’épuration · </span><b id="scnName">briefing</b></div>
+  <div class="zh-clock" id="clk"><small>Heure station</small>06:00</div>
+  <div id="speed"></div>
+  <button type="button" class="zh-hbtn" id="pause">Ⅱ Pause</button>
+  <span class="zh-header-spacer"></span>
+  <a class="zh-hbtn" href="simulateurs.html" data-zh-keep-src title="Revenir à la liste des simulateurs">← Simulateurs</a>
+  <button type="button" class="zh-hbtn zh-hide-sm" data-zh-trainer title="Mode formateur (touche F)">Mode formateur</button>
+  <button type="button" class="zh-hbtn" id="endBtn" title="Terminer la partie et voir le débriefing">Terminer</button>
+</header>
+
+<main class="zh-main eau-main">
+  <div class="eau-left">
+    <section class="zh-synoptic" id="syn" aria-label="Synoptique"></section>
+    <div class="eau-kpis" aria-label="Valeurs principales">
+      <div class="eau-kpi" id="k_o2"><span>O₂ bassin</span><b id="k_o2v">--</b><i>mg/L</i></div>
+      <div class="eau-kpi" id="k_nh"><span>NH₄ sortie</span><b id="k_nhv">--</b><i>mg/L</i></div>
+      <div class="eau-kpi" id="k_mes"><span>MES sortie</span><b id="k_mesv">--</b><i>mg/L</i></div>
+      <div class="eau-kpi" id="k_voile"><span>Voile</span><b id="k_voilev">--</b><i>m</i></div>
+      <div class="eau-kpi" id="k_qin"><span>Débit entrée</span><b id="k_qinv">--</b><i>m³/h</i></div>
+      <div class="eau-kpi" id="k_qr"><span>Recirculation</span><b id="k_qrv">--</b><i>m³/h</i></div>
+      <div class="eau-kpi" id="k_air"><span>Air</span><b id="k_airv">--</b><i>Nm³/h</i></div>
+      <div class="eau-kpi" id="k_st"><span>Bassin d’orage</span><b id="k_stv">--</b><i>%</i></div>
+    </div>
+    <div class="eau-bottom">
+    <section class="zh-alarmbar" id="alarmbar" aria-label="Alarmes"></section>
+    <details class="zh-trends" open>
+      <summary>Tendances</summary>
+      <div class="zh-trend-wrap">
+        <div class="eau-tabs" role="tablist">
+          <button type="button" role="tab" data-t="o2" aria-selected="true">Aération</button>
+          <button type="button" role="tab" data-t="rej" aria-selected="false">Qualité du rejet</button>
+          <button type="button" role="tab" data-t="hyd" aria-selected="false">Hydraulique et voile</button>
+        </div>
+        <div class="eau-tpane" id="tp_o2"><canvas class="zh-trend-canvas" id="tr_o2"></canvas><div id="lg_o2"></div></div>
+        <div class="eau-tpane" id="tp_rej" hidden><canvas class="zh-trend-canvas" id="tr_rej"></canvas><div id="lg_rej"></div></div>
+        <div class="eau-tpane" id="tp_hyd" hidden><canvas class="zh-trend-canvas" id="tr_hyd"></canvas><div id="lg_hyd"></div></div>
+      </div>
+    </details>
+    </div>
+  </div>
+  <aside class="zh-panel" id="zh-panel" aria-label="Commandes"></aside>
+</main>
+<button type="button" class="zh-drawer-btn" id="drawerBtn" aria-expanded="false" aria-controls="zh-panel"><span class="zh-dot"></span><span data-r="lbl">Commandes</span></button>
+
+<script src="assets/zh-sim-core.js"></script>
+<script src="assets/eau.js"></script>
+</body>
+</html>

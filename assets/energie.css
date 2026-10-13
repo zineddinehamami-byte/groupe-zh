@@ -1,0 +1,94 @@
+/* =====================================================================
+   Groupe ZH Sim — ÉNERGIE (chaudière vapeur) : compléments propres au
+   simulateur. Le design system commun est dans zh-sim.css.
+   ===================================================================== */
+
+/* ---------- Synoptique ---------- */
+.zh-svg .en-water { fill: #b9c1c8; }
+.zh-svg .en-water-glass { fill: #7f8a93; }
+.zh-svg .en-glass { fill: #f4f5f5; stroke: var(--zh-line); stroke-width: 1.5; }
+.zh-svg .en-tick { stroke: var(--zh-line); stroke-width: 1; }
+.zh-svg .en-tick-hh { stroke: var(--zh-alarm-hi); stroke-width: 1.5; }
+.zh-svg .en-tick-h { stroke: var(--zh-alarm-med); stroke-width: 1.5; }
+.zh-svg .en-ticklbl { font: 600 8.5px var(--zh-mono); fill: var(--zh-text-2); }
+.zh-svg .en-surface { stroke: var(--zh-text); stroke-width: 1.4; }
+.zh-svg .en-bubble { fill: #eef0f1; opacity: .9; }
+.zh-svg .en-riser { stroke: var(--zh-line); stroke-width: 1.6; }
+.zh-svg .en-downcomer { stroke: var(--zh-line); stroke-width: 4.5; }
+.zh-svg .en-refractory { fill: #cfd2d4; stroke: var(--zh-equip); stroke-width: 1; stroke-dasharray: 4 3; }
+.zh-svg .en-flame-outer { fill: url(#en-flame-g); opacity: .92; }
+.zh-svg .en-flame-inner { fill: #f6ead6; opacity: .85; }
+.zh-svg .en-flame { transform-box: fill-box; transform-origin: 0% 50%; }
+.zh-svg .en-flicker { transform-box: fill-box; transform-origin: 0% 50%; animation: en-flicker .35s ease-in-out infinite alternate; }
+@keyframes en-flicker { from { transform: scale(1, 1); } to { transform: scale(1.04, .9); } }
+.zh-svg .en-puff { fill: #f4f5f5; stroke: #c9ced2; stroke-width: 1; }
+.zh-svg .en-smoke { fill: #b8bdc2; }
+.zh-svg .en-valve { fill: #fff; stroke: var(--zh-line); stroke-width: 1.6; }
+.zh-svg .en-valve.en-open { fill: var(--zh-line); }
+.zh-svg .en-pump { stroke: var(--zh-line); stroke-width: 2; }
+.zh-svg .en-pump.en-fault { stroke: var(--zh-alarm-hi); stroke-width: 3; }
+.zh-svg .en-pumptxt { font: 700 9.5px var(--zh-mono); }
+.zh-svg .en-vb .zh-val { font-size: 15px; }
+.zh-svg .en-small { font: 500 10px var(--zh-font); fill: var(--zh-text-2); }
+.zh-svg .en-title { font: 700 11.5px var(--zh-font); fill: var(--zh-text-2); letter-spacing: .02em; }
+.zh-svg .en-state { font: 700 10px var(--zh-mono); }
+.zh-svg .en-state-bad { fill: var(--zh-alarm-hi); }
+.zh-svg .en-sig { stroke: var(--zh-line); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
+.zh-svg .en-flow { fill: none; stroke: #eef0f1; stroke-width: 1.4; stroke-dasharray: 6 9; }
+.zh-svg .en-click { cursor: pointer; }
+.zh-svg .en-click:hover .zh-valbox { stroke: var(--zh-text); }
+
+/* ---------- Bandeau de valeurs (mobile) ---------- */
+.en-kpis { display: none; }
+@media (max-width: 640px) {
+  .en-kpis {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 6px 6px 0;
+    background: var(--zh-bg-proc);
+  }
+  .en-kpi {
+    background: #f4f5f5; border: 1px solid var(--zh-border); border-radius: 4px; padding: 3px 6px;
+    font-size: 10.5px; color: var(--zh-text-2); line-height: 1.2; position: relative;
+  }
+  .en-kpi b { display: block; font: 700 16px var(--zh-mono); color: var(--zh-text); font-variant-numeric: tabular-nums; }
+  .en-kpi b small { font: 500 10px var(--zh-font); color: var(--zh-text-2); margin-left: 2px; }
+  .en-kpi.zh-alm-1 { border: 2px solid var(--zh-alarm-hi); }
+  .en-kpi.zh-alm-2 { border: 2px solid var(--zh-alarm-med); }
+  .en-kpi.zh-unack::after {
+    content: ""; position: absolute; right: 4px; top: 4px; width: 8px; height: 8px; background: var(--zh-alarm-hi);
+    animation: zh-blink 1s steps(2, start) infinite;
+  }
+  .en-kpi.zh-alm-2.zh-unack::after { background: var(--zh-alarm-med); }
+  .zh-svg .en-hide-sm { display: none; }
+  .en-trend-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---------- Faceplates ---------- */
+.en-fp-flash { animation: en-flash 1.2s ease-out 1; }
+@keyframes en-flash { 0% { box-shadow: 0 0 0 3px var(--zh-accent); } 100% { box-shadow: 0 0 0 0 transparent; } }
+.en-seg { display: inline-flex; border: 1px solid var(--zh-border); border-radius: var(--zh-radius); overflow: hidden; }
+.en-seg button { border: 0; background: #fff; padding: 3px 8px; font-size: 11.5px; cursor: pointer; font-weight: 600; color: var(--zh-text-2); min-height: 26px; }
+.en-seg button + button { border-left: 1px solid var(--zh-border); }
+.en-seg button[aria-pressed="true"] { background: var(--zh-line); color: #fff; }
+.en-step { display: flex; gap: 4px; align-items: center; }
+.en-step button { min-width: 34px; min-height: 30px; padding: 2px 6px; font: 600 12px var(--zh-mono); border: 1px solid var(--zh-border); background: #fff; border-radius: 3px; cursor: pointer; }
+.en-step button:hover { border-color: var(--zh-line); }
+.en-step .zh-v { min-width: 64px; text-align: center; }
+.en-man[hidden], .en-cmp[hidden] { display: none; }
+.en-cmp { display: grid; grid-template-columns: auto 1fr auto; gap: 2px 8px; align-items: center; font-size: 12px; margin-top: 4px; }
+.en-cmp .zh-bar { height: 7px; }
+.en-cmp .zh-bar > i.en-sp { background: var(--zh-sp); }
+.en-fp .zh-btn { min-height: 32px; padding: 5px 9px; font-size: 12.5px; }
+.en-fp .zh-btn[aria-pressed="true"] { background: var(--zh-line); color: #fff; }
+.en-row-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px; }
+.en-esd { font-weight: 800; letter-spacing: .02em; }
+.zh-fp-h .zh-state { white-space: nowrap; }
+.en-fp-sub { font-size: 11px; color: var(--zh-text-2); margin-top: 6px; text-transform: uppercase; letter-spacing: .05em; font-weight: 700; }
+
+/* ---------- Divers ---------- */
+.en-trend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.en-body.en-replaying .zh-panel { pointer-events: none; opacity: .75; }
+.en-body.en-replaying .en-click { pointer-events: none; }
+.en-mystery-box { background: #fff; border: 1px dashed var(--zh-brand); border-radius: 5px; padding: 10px 12px; margin-top: 14px; font-size: 13.5px; }
+@media (prefers-reduced-motion: reduce) {
+  .zh-svg .en-flicker { animation: none; }
+}
